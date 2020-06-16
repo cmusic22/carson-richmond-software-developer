@@ -1,0 +1,148 @@
+/*
+	Theam Name: Carson Richmond;
+	Author: Carson Richmond;
+*/
+
+body { 
+	background-color: #0E0B16;
+	color: #E7DFDD;
+	 }
+
+/*Takes away ul inline start default*/
+ul {
+	padding-inline-start:0px;
+}
+
+/*sets navbar*/
+.navbar {
+	background-color: #0E0B16;
+}
+
+.mynavbar li {
+	list-style-type: none;
+}
+.mynavbar {
+	overflow: hidden;
+	top: 0;
+	width: 100%;
+	z-index: 1
+	
+}
+
+.mynavbar a {
+	float: left;
+	display: block;
+	font-size: 24px;
+	color: #E7DFDD;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+.mynavbar a:hover {
+	background-color: #4717F6;
+}
+/*brand config*/
+.brand {
+	font-family: 'Courgette', cursive;
+	font-size: 1.5rem;
+}
+
+a.brand{
+	color:#E7DFDD;
+}
+
+/*home page*/
+.home-head-container {
+	width: 100%;
+	height: 34.375rem;
+	/*background-image: url();*/
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	text-align: center;
+}
+
+.home-head-text {
+	display: inline-block;
+	background-color: #0E0B16;
+	text-align: inherit;
+	margin: 15% auto;
+	padding: 5px;
+}
+
+/*default page*/
+.pageHeader {
+	display: block;
+	text-align: center;
+	font-size: 1.5rem;
+	height: 6.875rem;
+}
+
+.pageContent {
+	padding: 0.625rem;
+}
+
+.fill-space {
+	width: 100%;
+	height: 100%;
+}
+
+/*row styling*/
+.row {
+	margin-left: 0px;
+	margin-right: 0px; 
+}
+
+.col-md-6 {
+	padding-left: 0;
+	padding-right:0;
+}
+
+.row-text {
+	padding: 15px 20px;
+	color: #fff;
+}
+
+.homeImg {
+	max-height: 295px;
+	z-index: -1;
+	
+}
+
+/*CTA Row*/
+.contact-me-row {
+	height: 275px;
+	background-color: #4717F6;
+	color: #fff;
+}
+
+.contact-me-text {
+	display: inline-block;
+	text-align: center;
+	margin: auto;
+	padding: 5px;
+}
+
+/*footer nav*/
+.footer-nav li {
+	list-style-type: none;
+}
+
+.footer-nav {
+	overflow: hidden;
+	background-color: #0E0B16;
+	bottom: 0;
+	width: 100%;
+	z-index: 1
+}
+
+.footer-nav a {
+	float: left;
+	display: block;
+	font-size: 18px;
+	color: #E7DFDD;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
