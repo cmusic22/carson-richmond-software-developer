@@ -2,7 +2,7 @@
 	/* Template Name: Experience
 	   Author: Carson Richmond */
  get_header(); 
-
+ 	
 
 
 ?>
@@ -18,53 +18,52 @@
 	</div>
 </div>
 
-<!--Add CPT UI/ACF code-->
-<?php 
-add_action('experience_loop');	
+<?php $experiences = new WP_Query(array(
+	'post_type' => 'experiences'));?>
 
-function experience_loop() {
-	$args = array(
-		'post_type' => 'experiences',
-	);
+<?php while($experiences->have_posts()) : $experiences->the_post();
+		$employer = get_field('employer');
+		$location = get_field('location');
+		$timeFrame = get_field('time_frame');
+		$companyWebsite = get_field('company_website');
 
-	$myExperiences = new WP_Query($args);
-	$employer = get_field('employer');
-	$location = get_field('location');
-	$timeFrame = get_field('time_frame');
+	?>
 
-	if($myExperiences->have_posts()){
-		while($myExperiences->have_posts()): $myExperiences->the_post();
-		
-};?>
 <div class="row">
-	<div class="col-md-6">
-		<h2><?php echo $employer; ?></h2>
-		<p><?php echo $location; ?></p><!--Location-->
-		<p><?php echo $timeFrame; ?></p><!--Time Frame-->
-		<ul>
-			<?php if (have_rows('positions_held')) : while (have_rows('positions_held')) : the_row();
-				//vars
-				$position = get_sub_field('position'); ?>
+		<div class="col-md-3 row-text">
+			<h2><?php echo $employer; ?></h2>
+			<p><?php  echo $location; ?></p><!--Location-->
+			<p><?php echo $timeFrame; ?></p><!--Time Frame-->
+			<p><?php echo $companyWebsite; ?></p>
+		</div>
+		<div class="col-md-3 row-text">
+			<h3>Positions Held</h3>
+			<ul>
+				<?php if (have_rows('positions_held')) : while (have_rows('positions_held')) : the_row();
+					//vars
+					$position = get_sub_field('position'); ?>
 
-				<li><?php echo $position; ?></li>
+					<li><?php echo $position; ?></li>
 
-			<?php endwhile; endif; /*ends position repeater*/ ?>
-		</ul>
-	</div>
-	<div class="col-md-6">
-		<h3>Responsibilities</h3>
-		<ul>
-			<?php if (have_rows('responsibilities')) : while (have_rows('responsibilities')) : the_row();
-					
-				$responsibility = get_sub_field('responsibility'); ?>
+				<?php endwhile; endif; /*ends position repeater*/ ?>
+			</ul>
+		</div>
+		<div class="col-md-6 row-text">
+			<h3>Responsibilities</h3>
+			<ul>
+				<?php if (have_rows('responsibilities')) : while (have_rows('responsibilities')) : the_row();
+						
+					$responsibility = get_sub_field('responsibility'); ?>
 
-				<li><?php echo $responsibility; ?></li>
+					<li><?php echo $responsibility; ?></li>
 
-			<?php endwhile; endif; /*ends responsibility repeater*/ ?>
-		</ul>
-	</div>
+				<?php endwhile; endif; /*ends responsibility repeater*/ ?>
+			</ul>
+		</div>
+		
 </div>
 
-<?php } endwhile; endif;/*ends experience_loop function*/?>
+<?php endwhile; ?>
+
 
 <?php get_footer();?>

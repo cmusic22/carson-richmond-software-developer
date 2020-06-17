@@ -146,3 +146,8 @@ a.brand{
 	padding: 14px 16px;
 	text-decoration: none;
 }
+
+/*forms*/
+#gfield_description__6 {display: none;}
+
+.gform_body ul {list-style: none;}
