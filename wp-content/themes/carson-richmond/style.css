@@ -13,6 +13,10 @@ ul {
 	padding-inline-start:0px;
 }
 
+.left {
+	float: left;
+}
+
 /*sets navbar*/
 .navbar {
 	background-color: #0E0B16;
@@ -100,7 +104,7 @@ a.brand{
 }
 
 .row-text {
-	padding: 15px 20px;
+	padding: 0.9375rem 1.25rem;
 	color: #fff;
 }
 
@@ -151,3 +155,7 @@ a.brand{
 #gfield_description__6 {display: none;}
 
 .gform_body ul {list-style: none;}
+
+.ginput_container input {width: 99%;}
+
+#gform_1 {padding-top: 0.9375rem;}
